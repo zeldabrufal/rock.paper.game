@@ -136,3 +136,17 @@ PlayAgainButton.addEventListener('click', function() {
     document.getElementById('GameOver').textContent = "";  // Clear any game over message
     document.getElementById('result').textContent = "";  // Clear any round result message
 });
+
+
+
+document.querySelectorAll('.Manbutton').forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove 'focused' class from all buttons
+        document.querySelectorAll('.Manbutton').forEach(btn => {
+            btn.classList.remove('focused');
+        });
+
+        // Add 'focused' class to the clicked button
+        button.classList.add('focused');
+    });
+});
