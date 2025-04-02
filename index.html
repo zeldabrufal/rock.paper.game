@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    
+    <div class="block"> 
+        <button class="manCartoon">
+        <img class="cartoon" src="images/man.jpg" >
+        </button>
+        <h1>Rock, Paper, or Scissors?</h1>
+        <button class="manCartoon">
+        <img class="cartoon" src="images/woman.jpg" >
+        </button>
+    </div>
+    <div class="block">
+    <button id="RockButton" class="button">Rock</button>
+    <button id="PaperButton" class="button">Paper</button>
+    <button id="ScissorsButton" class="button">Scissors</button>
+    </div>
+    <div class="block">
+        <p id ="YourChoices" style="display: none;">You Chose: <span id="YouChose"></span></p> 
+        <p id ="CompChoices" style="display: none;">The Computer Chose: <span id="ComputerChose"></span></p>
+    </div>
+    <p> <span id="result" ></span></p>
+    <div class="block">
+        <p>Your Score: <span id="humanScore">0</span></p>
+        <p>Computer Score: <span id="computerScore">0</span></p>
+    </div>
+    
+
+
+
+    <button id="PlayAgainButton" style="display: none;" class="btn-75">Play again?</button>
+    
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
