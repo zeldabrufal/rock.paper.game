@@ -69,18 +69,68 @@ function PlayRound(HumanChoice) {
 
     if (resultText === "You Win!") {
         document.body.style.backgroundColor = "#83f28f";  // Change background to green
+        setTimeout(() => {
+            document.body.style.backgroundColor = "#000";  // Change back to black
+        }, 250);  // 500ms delay
     }
 
     if (resultText === "You Lose!") {
         document.body.style.backgroundColor = "#ff2c2c";  // Change background to green
+        setTimeout(() => {
+            document.body.style.backgroundColor = "#000";  // Change back to black
+        }, 250);  // 500ms delay
     }
 
     if (resultText === "Draw!") {
         document.body.style.backgroundColor = "orange";  // Change background to green
+        setTimeout(() => {
+            document.body.style.backgroundColor = "#000";  // Change back to black
+        }, 250);  // 500ms delay
     }
 
     document.getElementById("YouChose").innerText = userInput;
+
+
+    const element = document.getElementById("YouChose");
+
+    
+    element.classList.remove("rock-bg", "paper-bg", "scissors-bg");
+    
+    // Add the appropriate background based on user choice
+    if (userInput === "ROCK") {
+        element.classList.add("rock-bg");
+    } else if (userInput === "PAPER") {
+        element.classList.add("paper-bg");
+    } else if (userInput === "SCISSORS") {
+        element.classList.add("scissors-bg");
+    }
+    
+    // Ensure the result box styling is always applied
+    element.classList.add("result-box");
+
+
+
+
     document.getElementById("ComputerChose").innerText = ComputerChoice;
+
+    const elementComp = document.getElementById("ComputerChose");
+
+   
+    
+    // Add the appropriate background based on user choice
+    if (ComputerChoice === "ROCK") {
+        elementComp.classList.add("rock-bg");
+    } else if (ComputerChoice === "PAPER") {
+        elementComp.classList.add("paper-bg");
+    } else if (ComputerChoice === "SCISSORS") {
+        elementComp.classList.add("scissors-bg");
+    }
+    
+    // Ensure the result box styling is always applied
+    elementComp.classList.add("result-box");
+
+
+
 
     document.getElementById('YourChoices').style.display = 'block';
     document.getElementById('CompChoices').style.display = 'block';
@@ -139,14 +189,16 @@ PlayAgainButton.addEventListener('click', function() {
 
 
 
-document.querySelectorAll('.Manbutton').forEach(button => {
-    button.addEventListener('click', () => {
+document.querySelectorAll(".Manbutton").forEach(button => {
+    button.addEventListener("click", function () {
         // Remove 'focused' class from all buttons
-        document.querySelectorAll('.Manbutton').forEach(btn => {
-            btn.classList.remove('focused');
-        });
+        document.querySelectorAll(".Manbutton").forEach(btn => btn.classList.remove("focused"));
 
-        // Add 'focused' class to the clicked button
-        button.classList.add('focused');
+        // Add 'focused' class to clicked button
+        this.classList.add("focused");
     });
 });
+
+
+
+

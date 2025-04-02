@@ -49,21 +49,44 @@ body {
 }
 
 
-.Manbutton:active {
-    background-color: yellow; /* Keep yellow background on click */
-    border-color: yellow; /* Border stays yellow when clicked */
-    transform: scale(0.98); /* Slight shrink on click */
+ .rock:hover {
+    color: black; 
+    background-color: yellow;/* Text turns yellow */
 }
 
+ .paper:hover {
+    color: black; 
+    background-color: blue;/* Text turns yellow */
+}
+
+ .scissors:hover {
+    color: black; 
+    background-color: green;/* Text turns yellow */
+}
+
+
+
+
+.Manbutton:active, 
+.Manbutton:hover {
+    background-color: yellow;
+    border-color: yellow;
+    transform: scale(0.98);
+}
+
+/* Target the <p> inside the button when it is clicked or hovered */
+.Manbutton:active p,
+.Manbutton:hover p,
+.Manbutton.focused p {
+    color: black; /* Text inside <p> stays black */
+}
+
+/* Ensure button is styled correctly when focused (clicked) */
 .Manbutton.focused {
-    border-color: yellow; /* Ensure border is yellow when focused */
+    background-color: yellow;
+    border-color: yellow;
+    color: black;
 }
-
-
-
-
-
-
 
 
 .block {
@@ -74,4 +97,28 @@ body {
 
 p {
     padding: 0px 10px;
+}
+
+
+.result-box {
+    display: inline-block; /* Ensures width & height apply */
+    padding: 20px; /* Increases background size */
+    text-align: center;
+    font-size: 1.2em; /* Increases text size */
+}
+
+/* Define different colors for each choice */
+.rock-bg {
+    background-color: yellow;
+    color: black;
+}
+
+.paper-bg {
+    background-color: blue;
+    color: white; /* Improves contrast */
+}
+
+.scissors-bg {
+    background-color: green;
+    color: white;
 }
