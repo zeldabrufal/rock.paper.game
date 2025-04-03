@@ -133,6 +133,6 @@ p {
     color: white;
 }
 
-#CompChoices {
+#CompChoices, #result{
     display: none; /* Hidden initially */
 }

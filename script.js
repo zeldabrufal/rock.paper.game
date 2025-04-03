@@ -86,11 +86,15 @@ function PlayRound(HumanChoice) {
         // Set a timeout to change the background back to black after 250ms
         
     }
+
+
     
     document.getElementById("YouChose").innerText = userInput;
 
     const element = document.getElementById("YouChose");
     element.classList.remove("rock-bg", "paper-bg", "scissors-bg");
+
+    
     
     // Add the appropriate background based on user choice
     if (userInput === "ROCK") {
@@ -100,10 +104,12 @@ function PlayRound(HumanChoice) {
     } else if (userInput === "SCISSORS") {
         element.classList.add("scissors-bg");
     }
+
+    
     
     // Ensure the result box styling is always applied
     element.classList.add("result-box");
-
+    
 
 
 
@@ -142,8 +148,20 @@ function PlayRound(HumanChoice) {
 
 
 
+    const Result = document.getElementById("result").innerText = resultText;
 
-    document.getElementById("result").innerText = resultText;
+    Result.style.display = 'none';
+
+    setTimeout(() => {
+        document.getElementById('result').style.display = 'block';
+    }, 500);
+
+
+
+
+
+
+
     document.getElementById("humanScore").innerText = HumanScore;
     document.getElementById("computerScore").innerText = ComputerScore;
 
