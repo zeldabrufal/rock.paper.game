@@ -135,35 +135,57 @@ function PlayRound(HumanChoice) {
 
 
 
-    
-    document.getElementById('YourChoices').style.display = 'block';
+    // COMMETNING OUT THE PART THAT SHOWS YOUR CHOICE AGAIN
+    /* document.getElementById('YourChoices').style.display = 'block';*/
     
     const compChoices = document.getElementById('CompChoices');
     
     compChoices.style.display = 'none';
 
-    setTimeout(() => {
-        document.getElementById('CompChoices').style.display = 'block';
-    }, 500);
+    
 
-
-
-    const Result = document.getElementById("result").innerText = resultText;
-
+    document.getElementById("result").innerText = resultText;
+    const Result = document.getElementById("result");
     Result.style.display = 'none';
-
-    setTimeout(() => {
-        document.getElementById('result').style.display = 'block';
-    }, 500);
-
-
-
-
-
 
 
     document.getElementById("humanScore").innerText = HumanScore;
+    const HoomanScore = document.getElementById("humanScore");
+    HoomanScore.style.display = 'none';
+
+
     document.getElementById("computerScore").innerText = ComputerScore;
+    const CompootScore = document.getElementById("computerScore");
+    CompootScore.style.display = 'none';
+
+    const YoureScoreMessage = document.getElementById("YourScoreMessage");
+YoureScoreMessage.style.display = 'none';
+
+// Correctly reference and hide "CompScoreMessage"
+const CompeScoreMessage = document.getElementById("CompScoreMessage");
+CompeScoreMessage.style.display = 'none';
+
+
+
+
+
+
+    setTimeout(() => {
+        document.getElementById('CompChoices').style.display = 'block';
+        document.getElementById('result').style.display = 'block';
+        document.getElementById('humanScore').style.display = 'block';
+        document.getElementById('computerScore').style.display = 'block';
+        document.getElementById('YourScoreMessage').style.display = 'block';
+        document.getElementById('CompScoreMessage').style.display = 'block';
+
+    }, 500);
+
+
+
+
+
+
+
 
 
     if (HumanScore >= 3) {
@@ -215,15 +237,27 @@ PlayAgainButton.addEventListener('click', function() {
 
 
 
-document.querySelectorAll(".Manbutton, .button").forEach(button => {
+document.querySelectorAll(".Manbutton").forEach(button => {
     button.addEventListener("click", function () {
         // Remove 'focused' class from all buttons
-        document.querySelectorAll(".Manbutton, .button").forEach(btn => btn.classList.remove("focused"));
+        document.querySelectorAll(".Manbutton").forEach(btn => btn.classList.remove("focused"));
 
         // Add 'focused' class to clicked button
         this.classList.add("focused");
     });
 });
+
+
+document.querySelectorAll(".button").forEach(button => {
+    button.addEventListener("click", function () {
+        // Remove 'focused' class from all buttons
+        document.querySelectorAll(" .button").forEach(btn => btn.classList.remove("focused"));
+
+        // Add 'focused' class to clicked button
+        this.classList.add("focused");
+    });
+});
+
 
 
 

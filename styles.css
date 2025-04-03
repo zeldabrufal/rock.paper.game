@@ -30,7 +30,7 @@ body {
 }
 
 button {
-    font-size: 30px;
+    font-size: 15px;
 }
 
 
@@ -133,6 +133,6 @@ p {
     color: white;
 }
 
-#CompChoices, #result{
+#CompChoices, #result, #computerScore, #humanScore, #YourScoreMessage, #CompScoreMessage{
     display: none; /* Hidden initially */
 }
