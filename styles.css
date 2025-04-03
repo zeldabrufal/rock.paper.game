@@ -29,7 +29,9 @@ body {
     box-sizing: border-box;
 }
 
-
+button {
+    font-size: 30px;
+}
 
 
 .Manbutton, .button {
@@ -49,18 +51,26 @@ body {
 }
 
 
- .rock:hover {
+/* This is to do with the hovering  */
+
+ .rock:hover,
+ .rock:active,
+ .rock.focused {
     color: black; 
     background-color: yellow;/* Text turns yellow */
 }
 
- .paper:hover {
-    color: black; 
+ .paper:hover,
+ .paper:active,
+ .paper.focused {
+    color: white; 
     background-color: blue;/* Text turns yellow */
 }
 
- .scissors:hover {
-    color: black; 
+ .scissors:hover,
+ .scissors:active,
+ .scissors.focused {
+    color: white; 
     background-color: green;/* Text turns yellow */
 }
 
@@ -121,4 +131,8 @@ p {
 .scissors-bg {
     background-color: green;
     color: white;
+}
+
+#CompChoices {
+    display: none; /* Hidden initially */
 }

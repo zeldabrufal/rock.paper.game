@@ -69,31 +69,27 @@ function PlayRound(HumanChoice) {
 
     if (resultText === "You Win!") {
         document.body.style.backgroundColor = "#83f28f";  // Change background to green
-        setTimeout(() => {
-            document.body.style.backgroundColor = "#000";  // Change back to black
-        }, 250);  // 500ms delay
+       
     }
 
     if (resultText === "You Lose!") {
         document.body.style.backgroundColor = "#ff2c2c";  // Change background to green
-        setTimeout(() => {
-            document.body.style.backgroundColor = "#000";  // Change back to black
-        }, 250);  // 500ms delay
+       
     }
 
     if (resultText === "Draw!") {
-        document.body.style.backgroundColor = "orange";  // Change background to green
-        setTimeout(() => {
-            document.body.style.backgroundColor = "#000";  // Change back to black
-        }, 250);  // 500ms delay
+        // Change background color to orange
+        document.body.style.backgroundColor = "orange";
+    
+    
+    
+        // Set a timeout to change the background back to black after 250ms
+        
     }
-
+    
     document.getElementById("YouChose").innerText = userInput;
 
-
     const element = document.getElementById("YouChose");
-
-    
     element.classList.remove("rock-bg", "paper-bg", "scissors-bg");
     
     // Add the appropriate background based on user choice
@@ -112,9 +108,10 @@ function PlayRound(HumanChoice) {
 
 
     document.getElementById("ComputerChose").innerText = ComputerChoice;
+    
 
     const elementComp = document.getElementById("ComputerChose");
-
+    elementComp.classList.remove("rock-bg", "paper-bg", "scissors-bg")
    
     
     // Add the appropriate background based on user choice
@@ -132,8 +129,17 @@ function PlayRound(HumanChoice) {
 
 
 
+    
     document.getElementById('YourChoices').style.display = 'block';
-    document.getElementById('CompChoices').style.display = 'block';
+    
+    const compChoices = document.getElementById('CompChoices');
+    
+    compChoices.style.display = 'none';
+
+    setTimeout(() => {
+        document.getElementById('CompChoices').style.display = 'block';
+    }, 500);
+
 
 
 
@@ -158,12 +164,14 @@ function PlayRound(HumanChoice) {
         
     }
 
-
-
-
-
-
 }
+
+
+
+
+
+
+
 
 
 const PlayAgainButton = document.querySelector("#PlayAgainButton");
@@ -189,10 +197,10 @@ PlayAgainButton.addEventListener('click', function() {
 
 
 
-document.querySelectorAll(".Manbutton").forEach(button => {
+document.querySelectorAll(".Manbutton, .button").forEach(button => {
     button.addEventListener("click", function () {
         // Remove 'focused' class from all buttons
-        document.querySelectorAll(".Manbutton").forEach(btn => btn.classList.remove("focused"));
+        document.querySelectorAll(".Manbutton, .button").forEach(btn => btn.classList.remove("focused"));
 
         // Add 'focused' class to clicked button
         this.classList.add("focused");
